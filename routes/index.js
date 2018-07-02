@@ -29,6 +29,18 @@ module.exports = function (app, addon) {
     );
 
     // Add any additional route handlers you need for views or REST resources here...
+     // Render the background-color macro.
+    app.get('/v1/backgroundColor', function(req, res){
+
+    //  Grab all input parameters - sent through to us as query params.
+    var color = req.query['color'];
+
+    //  Tell the app to send back the 'background-color' view as
+    //  a HTTP response.
+    res.render('background-color', {
+        color: color
+    })
+    });
 
 
     // load any additional files you have in routes and apply those to the app
