@@ -44,6 +44,64 @@
                     "condition": "user_is_logged_in"
                 }]
             }
-        ]
+        ],
+
+        "staticContentMacros": [{
+            "url": "/v1/backgroundColor?color={color}&userKey={user.key}&pageId={page.id}&pageVersion={page.version}¯oHash={macro.hash}",
+            "description": {
+                "value": "Allow users to add a background colour around selected content."
+            },
+            "documentation": {
+                "url" : "http://www.google.com"
+            },
+            "categories": ["formatting"],
+            "outputType": "inline",
+            "bodyType": "rich-text",
+            "name": {
+                "value": "Background Colour (Connect)"
+            },
+            "key": "bg-color-macro",
+
+            "propertyPanel": {
+                "url": "/v1/backgroundColor?color={color}&userKey={user.key}&pageId={page.id}&pageVersion={page.version}¯oHash={macro.hash}",
+                "controls": [{
+                        "type": "button",
+                        "label": {
+                          "value": "Version"
+                        },
+                        "key": "version"
+                }]
+            },
+        
+            "parameters": [{
+                "identifier": "color",
+                "name": {
+                    "value": "Color"
+                },
+                "type": "string",
+                "required": true,
+                "multiple": false
+            },
+            {
+                "identifier": "size",
+                "name": {
+                  "value": "Size"
+                },
+                "description": {
+                  "value": "Select size"
+                },
+                "type": "enum",
+                "required": true,
+                "multiple": false,
+                "defaultValue": "Original",
+                "values": [
+                  "S",
+                  "M",
+                  "L",
+                  "Original"
+                ],
+                "hidden": false
+          }]
+        }]
     }
 }
